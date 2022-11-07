@@ -17,7 +17,7 @@
 	"settings": {
 		// Board support package settings:
 		"bsp": {
-			"cpu": "",  // must be used if multi core system (put _m4 or _m7 here for example)
+			"cpu": "", 
 			"soc": "",
 			"board": "",
 			"board_root": "",
