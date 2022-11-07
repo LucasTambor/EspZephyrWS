@@ -1,0 +1,119 @@
+{
+	"folders": [
+		{
+			"name": "workspace",
+			"path": "."
+		},
+		{
+			"name": "hal_espressif",
+			"path": "../modules/hal/espressif",
+		},
+		{
+			"name": "zephyr",
+			"path": "../zephyr",
+		},
+	],
+
+	"settings": {
+		// Board support package settings:
+		"bsp": {
+			"cpu": "",  // must be used if multi core system (put _m4 or _m7 here for example)
+			"soc": "",
+			"board": "",
+			"board_root": "",
+			"board_path": "",
+			"svd_path": "${workspaceFolder}/esp32_svd",
+			"openocd_root": "${userHome}/openOCD/openocd-esp32",
+			"debug_config": ""
+		},
+
+		"C_Cpp.default.compileCommands": "${workspaceFolder:zephyr}/build/compile_commands.json",
+		"C_Cpp.default.includePath": [
+			"${workspaceFolder:zephyr}",
+			"${workspaceFolder:hal_espressif}",
+		],
+
+		"cmake.configureOnOpen": false,
+
+		// The number of spaces a tab is equal to. This setting is overridden
+		// based on the file contents when `editor.detectIndentation` is true.
+		"editor.tabSize": 4,
+
+		// Insert spaces when pressing Tab. This setting is overriden
+		// based on the file contents when `editor.detectIndentation` is true.
+		"editor.insertSpaces": false,
+
+		// When opening a file, `editor.tabSize` and `editor.insertSpaces`
+		// will be detected based on the file contents. Set to false to keep
+		// the values you've explicitly set, above.
+		"editor.detectIndentation": false,
+		"editor.rulers": [100],
+
+		"editor.cursorBlinking": "smooth",
+
+		"files.trimFinalNewlines": true,
+		"editor.formatOnSave": false,
+		"editor.codeActionsOnSave": [],
+
+		"editor.renderWhitespace": "all",
+
+		"files.watcherExclude": {
+			"**/.git/objects/**": true,
+			"**/.git/subtree-cache/**": true,
+			"**/node_modules/**": true,
+			"**/tmp/**": true,
+			"**/.git": true,
+			"**/.svn": true,
+			"**/.hg": true,
+			"**/CVS": true,
+			"**/.DS_Store": true,
+			"**/node_modules": true,
+			"**/bower_components": true,
+			"**/dist/**": true,
+			"**/log/**": true,
+			"**/logs/**": true,
+			"**/.fdk/**": true,
+			"**/.west/**": true,
+			"**/.vscode/**": true,
+			"${workspaceRoot}/../zephyr/**": true
+		},
+		"files.exclude": {
+			"**/.git/objects/**": true,
+			"**/.git/subtree-cache/**": true,
+			"**/node_modules/**": true,
+			"**/tmp/**": true,
+			"**/.git": true,
+			"**/.svn": true,
+			"**/.hg": true,
+			"**/CVS": true,
+			"**/.DS_Store": true,
+			"**/node_modules": true,
+			"**/bower_components": true,
+			"**/dist/**": true,
+			"**/log/**": true,
+			"**/.fdk/**": true,
+			"**/.west/**": true
+		},
+		"search.exclude": {
+			"**/.git/objects/**": true,
+			"**/.git/subtree-cache/**": true,
+			"**/node_modules/**": true,
+			"**/tmp/**": true,
+			"**/.git": true,
+			"**/.svn": true,
+			"**/.hg": true,
+			"**/CVS": true,
+			"**/.DS_Store": true,
+			"**/node_modules": true,
+			"**/bower_components": true,
+			"**/dist/**": true,
+			"**/log/**": true,
+			"**/.west/**": true
+		},
+		"editor.renderControlCharacters": false,
+		"cortex-debug.variableUseNaturalFormat": false,
+		"files.associations": {
+			"pwm.h": "c"
+		}
+	}
+}

@@ -1,0 +1,26 @@
+{
+  "version": "0.1.0",
+  "configurations": [
+    {
+      "name": "CORTEX-ESP32",
+      "cwd": "${workspaceFolder:zephyr}",
+      "executable": "${workspaceFolder:zephyr}/build/zephyr/zephyr.elf",
+      "request": "attach",
+      "type": "cortex-debug",
+      "servertype": "openocd",
+      "interface": "jtag",
+      "svdFile": "${config:bsp.svd_path}/esp32.base.svd",
+      "serverpath": "${config:bsp.openocd_root}/bin/openocd",
+      "toolchainPath": "${userHome}/zephyr-sdk-0.15.0/xtensa-espressif_esp32_zephyr-elf/bin",
+      "toolchainPrefix": "xtensa-espressif_esp32_zephyr-elf",
+      "configFiles": [
+          "${config:bsp.openocd_root}/share/openocd/scripts/board/esp32-wrover-kit-3.3v.cfg"
+      ],
+      "openOCDPreConfigLaunchCommands":[
+          "set ESP_RTOS none"
+      ],
+      "runToEntryPoint": "main"
+    }
+
+  ]
+}
