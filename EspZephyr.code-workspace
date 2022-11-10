@@ -17,12 +17,12 @@
 	"settings": {
 		// Board support package settings:
 		"bsp": {
-			"cpu": "", 
+			"cpu": "",
 			"soc": "",
 			"board": "",
 			"board_root": "",
 			"board_path": "",
-			"svd_path": "${workspaceFolder}/esp32_svd",
+			"svd_path": "${workspaceFolder}/esp_svd",
 			"openocd_root": "${userHome}/openOCD/openocd-esp32",
 			"debug_config": ""
 		},
