@@ -112,8 +112,5 @@
 		},
 		"editor.renderControlCharacters": false,
 		"cortex-debug.variableUseNaturalFormat": false,
-		"files.associations": {
-			"pwm.h": "c"
-		}
 	}
 }

@@ -2,7 +2,7 @@
 	"version": "0.1.0",
 	"configurations": [
 	{
-		"name": "ESP32",
+		"name": "ESP32-DEVKITC",
 		"cwd": "${workspaceFolder:zephyr}",
 		"executable": "${workspaceFolder:zephyr}/build/zephyr/zephyr.elf",
 		"request": "attach",
@@ -13,11 +13,51 @@
 		"serverpath": "${config:bsp.openocd_root}/bin/openocd",
 		"toolchainPath": "${userHome}/zephyr-sdk-0.15.0/xtensa-espressif_esp32_zephyr-elf/bin",
 		"toolchainPrefix": "xtensa-espressif_esp32_zephyr-elf",
+		"openOCDPreConfigLaunchCommands":[
+			"set ESP32_ONLYCPU 1",
+			"set ESP_RTOS none"
+		],
+		"configFiles": [
+			"${config:bsp.openocd_root}/share/openocd/scripts/board/esp32_devkitj_v1.cfg"
+		],
+		"overrideAttachCommands": [
+			"set remote hardware-watchpoint-limit 2",
+			"mon halt",
+			"flushregs"
+		],
+		"overrideRestartCommands": [
+			"mon reset halt",
+			"flushregs",
+		],
+		"runToEntryPoint": "main"
+	},
+	{
+		"name": "ESP-WROVER-KIT",
+		"cwd": "${workspaceFolder:zephyr}",
+		"executable": "${workspaceFolder:zephyr}/build/zephyr/zephyr.elf",
+		"request": "attach",
+		"type": "cortex-debug",
+		"servertype": "openocd",
+		"interface": "jtag",
+		"svdFile": "${config:bsp.svd_path}/esp32.base.svd",
+		"serverpath": "${config:bsp.openocd_root}/bin/openocd",
+		"toolchainPath": "${userHome}/zephyr-sdk-0.15.0/xtensa-espressif_esp32_zephyr-elf/bin",
+		"toolchainPrefix": "xtensa-espressif_esp32_zephyr-elf",
+		"openOCDPreConfigLaunchCommands":[
+			"set ESP32_ONLYCPU 1",
+			"set ESP_RTOS none"
+		],
 		"configFiles": [
 			"${config:bsp.openocd_root}/share/openocd/scripts/board/esp32-wrover-kit-3.3v.cfg"
 		],
-		"openOCDPreConfigLaunchCommands":[
-			"set ESP_RTOS none"
+		"overrideAttachCommands": [
+			"set remote hardware-watchpoint-limit 2",
+			"mon halt",
+			"flushregs"
+		],
+		"overrideRestartCommands": [
+			"mon reset halt",
+			"flushregs",
 		],
 		"runToEntryPoint": "main"
 	},
@@ -33,11 +73,20 @@
 		"serverpath": "${config:bsp.openocd_root}/bin/openocd",
 		"toolchainPath": "${userHome}/zephyr-sdk-0.15.0/xtensa-espressif_esp32s2_zephyr-elf/bin",
 		"toolchainPrefix": "xtensa-espressif_esp32s2_zephyr-elf",
+		"openOCDPreConfigLaunchCommands":[
+			"set ESP_RTOS none"
+		],
 		"configFiles": [
 			"${config:bsp.openocd_root}/share/openocd/scripts/board/esp32s2-bridge.cfg"
 		],
-		"openOCDPreConfigLaunchCommands":[
-			"set ESP_RTOS none"
+		"overrideAttachCommands": [
+			"set remote hardware-watchpoint-limit 2",
+			"mon halt",
+			"flushregs"
+		],
+		"overrideRestartCommands": [
+			"mon reset halt",
+			"flushregs",
 		],
 		"runToEntryPoint": "main"
 	},
@@ -53,12 +102,21 @@
 		"serverpath": "${config:bsp.openocd_root}/bin/openocd",
 		"toolchainPath": "${userHome}/zephyr-sdk-0.15.0/riscv64-zephyr-elf/bin/",
 		"toolchainPrefix": "riscv64-zephyr-elf",
+		"openOCDPreConfigLaunchCommands":[
+			"set ESP_RTOS none"
+		],
 		"configFiles": [
 			"${config:bsp.openocd_root}/share/openocd/scripts/board/esp32c3-builtin.cfg"
 
 		],
-		"openOCDPreConfigLaunchCommands":[
-			"set ESP_RTOS none"
+		"overrideAttachCommands": [
+			"set remote hardware-watchpoint-limit 2",
+			"mon halt",
+			"flushregs"
+		],
+		"overrideRestartCommands": [
+			"mon reset halt",
+			"flushregs",
 		],
 		"runToEntryPoint": "main",
 	}
