@@ -4,11 +4,11 @@ This simple repository provides Visual Studio Code (aka VSCode) necessary
 configurations for [Espressif](https://www.espressif.com/) SoC development on [Zephyr](https://github.com/zephyrproject-rtos/zephyr)
 
 * Configuration of VSCode workspace
-* Debug Launch for ESP32, ESP32S2 and ESP32C3
+* Debug Launch for ESP32, ESP32S2/S3 and ESP32C3
 * OpenOCD ESP config files
-* ESP32/S2/C3 SVD files needed for debugger
+* ESP32/S2/S3/C3 SVD files needed for debugger
 
-**Note:** Currently only `Ubuntu Linux` with `zephyr-sdk-0.15.0` were tested!
+**Note:** Currently S3 is not yet supported on Zephyr. It will be soon!
 
 ## Getting started
 Follow this simple steps to simplify your Zephyr development in VSCode:
