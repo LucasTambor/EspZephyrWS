@@ -8,8 +8,6 @@ configurations for [Espressif](https://www.espressif.com/) SoC development on [Z
 * OpenOCD ESP config files
 * ESP32/S2/S3/C3 SVD files needed for debugger
 
-**Note:** Currently S3 is not yet supported on Zephyr. It will be soon!
-
 ## Getting started
 Follow this simple steps to simplify your Zephyr development in VSCode:
 
