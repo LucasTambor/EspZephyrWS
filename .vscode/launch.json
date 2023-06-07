@@ -121,6 +121,36 @@
 		"runToEntryPoint": "main",
 	},
 	{
+		"name": "ESP32C6",
+		"cwd": "${workspaceRoot}",
+		"executable": "${workspaceFolder:zephyr}/build/zephyr/zephyr.elf",
+		"request": "attach",
+		"type": "cortex-debug",
+		"servertype": "openocd",
+		"interface": "jtag",
+		"svdFile": "${config:bsp.svd_path}/esp32c6.base.svd",
+		"serverpath": "${config:bsp.openocd_root}/bin/openocd",
+		"toolchainPath": "${userHome}/zephyr-sdk-0.16.0/riscv64-zephyr-elf/bin/",
+		"toolchainPrefix": "riscv64-zephyr-elf",
+		"openOCDPreConfigLaunchCommands":[
+			"set ESP_RTOS none"
+		],
+		"configFiles": [
+			"${config:bsp.openocd_root}/share/openocd/scripts/board/esp32c6-builtin.cfg"
+
+		],
+		"overrideAttachCommands": [
+			"set remote hardware-watchpoint-limit 2",
+			"mon reset halt",
+			"flushregs"
+		],
+		"overrideRestartCommands": [
+			"mon reset halt",
+			"flushregs",
+		],
+		"runToEntryPoint": "main",
+	},
+	{
 		"name": "ESP32S3-DEVKITC",
 		"cwd": "${workspaceRoot}",
 		"executable": "${workspaceFolder:zephyr}/build/zephyr/zephyr.elf",
@@ -134,7 +164,8 @@
 		"toolchainPrefix": "xtensa-espressif_esp32s3_zephyr-elf",
 		"openOCDPreConfigLaunchCommands":[
 			"set ESP32_ONLYCPU 1",
-			"set ESP_RTOS none"
+			"set ESP_RTOS none",
+			"set ESP_FLASH_SIZE 0"
 		],
 		"configFiles": [
 			"${config:bsp.openocd_root}/share/openocd/scripts/board/esp32s3-builtin.cfg"
