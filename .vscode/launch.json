@@ -11,7 +11,7 @@
 		"interface": "jtag",
 		"svdFile": "${config:bsp.svd_path}/esp32.base.svd",
 		"serverpath": "${config:bsp.openocd_root}/bin/openocd",
-		"toolchainPath": "${userHome}/zephyr-sdk-0.16.1/xtensa-espressif_esp32_zephyr-elf/bin",
+		"toolchainPath": "${userHome}/zephyr-sdk-0.16.8/xtensa-espressif_esp32_zephyr-elf/bin",
 		"toolchainPrefix": "xtensa-espressif_esp32_zephyr-elf",
 		"openOCDPreConfigLaunchCommands":[
 			"set ESP32_ONLYCPU 1",
@@ -41,7 +41,7 @@
 		"interface": "jtag",
 		"svdFile": "${config:bsp.svd_path}/esp32.base.svd",
 		"serverpath": "${config:bsp.openocd_root}/bin/openocd",
-		"toolchainPath": "${userHome}/zephyr-sdk-0.16.1/xtensa-espressif_esp32_zephyr-elf/bin",
+		"toolchainPath": "${userHome}/zephyr-sdk-0.16.8/xtensa-espressif_esp32_zephyr-elf/bin",
 		"toolchainPrefix": "xtensa-espressif_esp32_zephyr-elf",
 		"openOCDPreConfigLaunchCommands":[
 			"set ESP32_ONLYCPU 1",
@@ -71,7 +71,7 @@
 		"interface": "jtag",
 		"svdFile": "${config:bsp.svd_path}/esp32s2.base.svd",
 		"serverpath": "${config:bsp.openocd_root}/bin/openocd",
-		"toolchainPath": "${userHome}/zephyr-sdk-0.16.1/xtensa-espressif_esp32s2_zephyr-elf/bin",
+		"toolchainPath": "${userHome}/zephyr-sdk-0.16.8/xtensa-espressif_esp32s2_zephyr-elf/bin",
 		"toolchainPrefix": "xtensa-espressif_esp32s2_zephyr-elf",
 		"openOCDPreConfigLaunchCommands":[
 			"set ESP_RTOS none"
@@ -99,7 +99,7 @@
 		"interface": "jtag",
 		"svdFile": "${config:bsp.svd_path}/esp32c3.base.svd",
 		"serverpath": "${config:bsp.openocd_root}/bin/openocd",
-		"toolchainPath": "${userHome}/zephyr-sdk-0.16.1/riscv64-zephyr-elf/bin/",
+		"toolchainPath": "${userHome}/zephyr-sdk-0.16.8/riscv64-zephyr-elf/bin/",
 		"toolchainPrefix": "riscv64-zephyr-elf",
 		"openOCDPreConfigLaunchCommands":[
 			"set ESP_RTOS none"
@@ -129,7 +129,7 @@
 		"interface": "jtag",
 		"svdFile": "${config:bsp.svd_path}/esp32c6.base.svd",
 		"serverpath": "${config:bsp.openocd_root}/bin/openocd",
-		"toolchainPath": "${userHome}/zephyr-sdk-0.16.1/riscv64-zephyr-elf/bin/",
+		"toolchainPath": "${userHome}/zephyr-sdk-0.16.8/riscv64-zephyr-elf/bin/",
 		"toolchainPrefix": "riscv64-zephyr-elf",
 		"openOCDPreConfigLaunchCommands":[
 			"set ESP_RTOS none"
@@ -159,7 +159,7 @@
 		"interface": "jtag",
 		"svdFile": "${config:bsp.svd_path}/esp32s3.base.svd",
 		"serverpath": "${config:bsp.openocd_root}/bin/openocd",
-		"toolchainPath": "${userHome}/zephyr-sdk-0.16.1/xtensa-espressif_esp32s3_zephyr-elf/bin/",
+		"toolchainPath": "${userHome}/zephyr-sdk-0.16.8/xtensa-espressif_esp32s3_zephyr-elf/bin/",
 		"toolchainPrefix": "xtensa-espressif_esp32s3_zephyr-elf",
 		"openOCDPreConfigLaunchCommands":[
 			"set ESP32_ONLYCPU 1",
