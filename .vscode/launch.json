@@ -23,11 +23,11 @@
 		"overrideAttachCommands": [
 			"set remote hardware-watchpoint-limit 2",
 			"mon halt",
-			"flushregs"
+			"maintenance flush register-cache"
 		],
 		"overrideRestartCommands": [
 			"mon reset halt",
-			"flushregs",
+			"maintenance flush register-cache",
 		],
 		"runToEntryPoint": "main"
 	},
@@ -53,11 +53,11 @@
 		"overrideAttachCommands": [
 			"set remote hardware-watchpoint-limit 2",
 			"mon halt",
-			"flushregs"
+			"maintenance flush register-cache"
 		],
 		"overrideRestartCommands": [
 			"mon reset halt",
-			"flushregs",
+			"maintenance flush register-cache",
 		],
 		"runToEntryPoint": "main"
 	},
@@ -82,13 +82,12 @@
 		"overrideAttachCommands": [
 			"set remote hardware-watchpoint-limit 2",
 			"mon halt",
-			"flushregs"
+			"maintenance flush register-cache"
 		],
 		"overrideRestartCommands": [
 			"mon reset halt",
-			"flushregs",
+			"maintenance flush register-cache",
 		],
-		// "runToEntryPoint": "main"
 	},
 	{
 		"name": "ESP32C3",
@@ -112,11 +111,11 @@
 		"overrideAttachCommands": [
 			"set remote hardware-watchpoint-limit 2",
 			"mon halt",
-			"flushregs"
+			"maintenance flush register-cache"
 		],
 		"overrideRestartCommands": [
 			"mon reset halt",
-			"flushregs",
+			"maintenance flush register-cache",
 		],
 		"runToEntryPoint": "main",
 	},
@@ -142,11 +141,11 @@
 		"overrideAttachCommands": [
 			"set remote hardware-watchpoint-limit 2",
 			"mon reset halt",
-			"flushregs"
+			"maintenance flush register-cache"
 		],
 		"overrideRestartCommands": [
 			"mon reset halt",
-			"flushregs",
+			"maintenance flush register-cache",
 		],
 		"runToEntryPoint": "main",
 	},
@@ -174,13 +173,12 @@
 		"overrideAttachCommands": [
 			"set remote hardware-watchpoint-limit 2",
 			"mon halt",
-			"flushregs",
+			"maintenance flush register-cache",
 		],
 		"overrideRestartCommands": [
 			"mon reset halt",
-			"flushregs",
+			"maintenance flush register-cache",
 		],
-		"runToEntryPoint": "main",
 	}
 
 	]
