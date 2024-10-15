@@ -9,9 +9,9 @@
 		"type": "cortex-debug",
 		"servertype": "openocd",
 		"interface": "jtag",
-		"svdFile": "${config:bsp.svd_path}/esp32.base.svd",
+		"svdFile": "${config:bsp.svd_path}/esp32.svd",
 		"serverpath": "${config:bsp.openocd_root}/bin/openocd",
-		"toolchainPath": "${userHome}/zephyr-sdk-0.16.1/xtensa-espressif_esp32_zephyr-elf/bin",
+		"toolchainPath": "${userHome}/zephyr-sdk-0.16.9-rc2/xtensa-espressif_esp32_zephyr-elf/bin",
 		"toolchainPrefix": "xtensa-espressif_esp32_zephyr-elf",
 		"openOCDPreConfigLaunchCommands":[
 			"set ESP32_ONLYCPU 1",
@@ -23,11 +23,11 @@
 		"overrideAttachCommands": [
 			"set remote hardware-watchpoint-limit 2",
 			"mon halt",
-			"flushregs"
+			"maintenance flush register-cache"
 		],
 		"overrideRestartCommands": [
 			"mon reset halt",
-			"flushregs",
+			"maintenance flush register-cache",
 		],
 		"runToEntryPoint": "main"
 	},
@@ -39,9 +39,9 @@
 		"type": "cortex-debug",
 		"servertype": "openocd",
 		"interface": "jtag",
-		"svdFile": "${config:bsp.svd_path}/esp32.base.svd",
+		"svdFile": "${config:bsp.svd_path}/esp32.svd",
 		"serverpath": "${config:bsp.openocd_root}/bin/openocd",
-		"toolchainPath": "${userHome}/zephyr-sdk-0.16.1/xtensa-espressif_esp32_zephyr-elf/bin",
+		"toolchainPath": "${userHome}/zephyr-sdk-0.16.9-rc2/xtensa-espressif_esp32_zephyr-elf/bin",
 		"toolchainPrefix": "xtensa-espressif_esp32_zephyr-elf",
 		"openOCDPreConfigLaunchCommands":[
 			"set ESP32_ONLYCPU 1",
@@ -53,11 +53,11 @@
 		"overrideAttachCommands": [
 			"set remote hardware-watchpoint-limit 2",
 			"mon halt",
-			"flushregs"
+			"maintenance flush register-cache"
 		],
 		"overrideRestartCommands": [
 			"mon reset halt",
-			"flushregs",
+			"maintenance flush register-cache",
 		],
 		"runToEntryPoint": "main"
 	},
@@ -69,9 +69,9 @@
 		"type": "cortex-debug",
 		"servertype": "openocd",
 		"interface": "jtag",
-		"svdFile": "${config:bsp.svd_path}/esp32s2.base.svd",
+		"svdFile": "${config:bsp.svd_path}/esp32s2.svd",
 		"serverpath": "${config:bsp.openocd_root}/bin/openocd",
-		"toolchainPath": "${userHome}/zephyr-sdk-0.16.1/xtensa-espressif_esp32s2_zephyr-elf/bin",
+		"toolchainPath": "${userHome}/zephyr-sdk-0.16.9-rc2/xtensa-espressif_esp32s2_zephyr-elf/bin",
 		"toolchainPrefix": "xtensa-espressif_esp32s2_zephyr-elf",
 		"openOCDPreConfigLaunchCommands":[
 			"set ESP_RTOS none"
@@ -82,13 +82,41 @@
 		"overrideAttachCommands": [
 			"set remote hardware-watchpoint-limit 2",
 			"mon halt",
-			"flushregs"
+			"maintenance flush register-cache"
 		],
 		"overrideRestartCommands": [
 			"mon reset halt",
-			"flushregs",
+			"maintenance flush register-cache",
 		],
-		// "runToEntryPoint": "main"
+	},
+	{
+		"name": "ESP32C2",
+		"cwd": "${workspaceRoot}",
+		"executable": "${workspaceFolder:zephyr}/build/zephyr/zephyr.elf",
+		"request": "attach",
+		"type": "cortex-debug",
+		"servertype": "openocd",
+		"interface": "jtag",
+		"svdFile": "${config:bsp.svd_path}/esp32c2.svd",
+		"serverpath": "${config:bsp.openocd_root}/bin/openocd",
+		"toolchainPath": "${userHome}/zephyr-sdk-0.16.9-rc2/riscv64-zephyr-elf/bin/",
+		"toolchainPrefix": "riscv64-zephyr-elf",
+		"openOCDPreConfigLaunchCommands":[
+			"set ESP_RTOS none"
+		],
+		"configFiles": [
+			"${config:bsp.openocd_root}/share/openocd/scripts/board/esp32c2-ftdi.cfg"
+		],
+		"overrideAttachCommands": [
+			"set remote hardware-watchpoint-limit 2",
+			"mon halt",
+			"maintenance flush register-cache"
+		],
+		"overrideRestartCommands": [
+			"mon reset halt",
+			"maintenance flush register-cache",
+		],
+		"runToEntryPoint": "main",
 	},
 	{
 		"name": "ESP32C3",
@@ -98,9 +126,9 @@
 		"type": "cortex-debug",
 		"servertype": "openocd",
 		"interface": "jtag",
-		"svdFile": "${config:bsp.svd_path}/esp32c3.base.svd",
+		"svdFile": "${config:bsp.svd_path}/esp32c3.svd",
 		"serverpath": "${config:bsp.openocd_root}/bin/openocd",
-		"toolchainPath": "${userHome}/zephyr-sdk-0.16.1/riscv64-zephyr-elf/bin/",
+		"toolchainPath": "${userHome}/zephyr-sdk-0.16.9-rc2/riscv64-zephyr-elf/bin/",
 		"toolchainPrefix": "riscv64-zephyr-elf",
 		"openOCDPreConfigLaunchCommands":[
 			"set ESP_RTOS none"
@@ -112,11 +140,11 @@
 		"overrideAttachCommands": [
 			"set remote hardware-watchpoint-limit 2",
 			"mon halt",
-			"flushregs"
+			"maintenance flush register-cache"
 		],
 		"overrideRestartCommands": [
 			"mon reset halt",
-			"flushregs",
+			"maintenance flush register-cache",
 		],
 		"runToEntryPoint": "main",
 	},
@@ -128,9 +156,9 @@
 		"type": "cortex-debug",
 		"servertype": "openocd",
 		"interface": "jtag",
-		"svdFile": "${config:bsp.svd_path}/esp32c6.base.svd",
+		"svdFile": "${config:bsp.svd_path}/esp32c6.svd",
 		"serverpath": "${config:bsp.openocd_root}/bin/openocd",
-		"toolchainPath": "${userHome}/zephyr-sdk-0.16.1/riscv64-zephyr-elf/bin/",
+		"toolchainPath": "${userHome}/zephyr-sdk-0.16.9-rc2/riscv64-zephyr-elf/bin/",
 		"toolchainPrefix": "riscv64-zephyr-elf",
 		"openOCDPreConfigLaunchCommands":[
 			"set ESP_RTOS none"
@@ -142,11 +170,11 @@
 		"overrideAttachCommands": [
 			"set remote hardware-watchpoint-limit 2",
 			"mon reset halt",
-			"flushregs"
+			"maintenance flush register-cache"
 		],
 		"overrideRestartCommands": [
 			"mon reset halt",
-			"flushregs",
+			"maintenance flush register-cache",
 		],
 		"runToEntryPoint": "main",
 	},
@@ -158,9 +186,9 @@
 		"type": "cortex-debug",
 		"servertype": "openocd",
 		"interface": "jtag",
-		"svdFile": "${config:bsp.svd_path}/esp32s3.base.svd",
+		"svdFile": "${config:bsp.svd_path}/esp32s3.svd",
 		"serverpath": "${config:bsp.openocd_root}/bin/openocd",
-		"toolchainPath": "${userHome}/zephyr-sdk-0.16.1/xtensa-espressif_esp32s3_zephyr-elf/bin/",
+		"toolchainPath": "${userHome}/zephyr-sdk-0.16.9-rc2/xtensa-espressif_esp32s3_zephyr-elf/bin/",
 		"toolchainPrefix": "xtensa-espressif_esp32s3_zephyr-elf",
 		"openOCDPreConfigLaunchCommands":[
 			"set ESP32_ONLYCPU 1",
@@ -174,13 +202,12 @@
 		"overrideAttachCommands": [
 			"set remote hardware-watchpoint-limit 2",
 			"mon halt",
-			"flushregs",
+			"maintenance flush register-cache",
 		],
 		"overrideRestartCommands": [
 			"mon reset halt",
-			"flushregs",
+			"maintenance flush register-cache",
 		],
-		"runToEntryPoint": "main",
 	}
 
 	]
