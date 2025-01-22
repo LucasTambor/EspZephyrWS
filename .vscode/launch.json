@@ -2,7 +2,7 @@
 	"version": "0.1.0",
 	"configurations": [
 	{
-		"name": "ESP32-DEVKITC",
+		"name": "ESP32",
 		"cwd": "${workspaceFolder:zephyr}",
 		"executable": "${workspaceFolder:zephyr}/build/zephyr/zephyr.elf",
 		"request": "attach",
@@ -11,26 +11,28 @@
 		"interface": "jtag",
 		"svdFile": "${config:bsp.svd_path}/esp32.svd",
 		"serverpath": "${config:bsp.openocd_root}/bin/openocd",
-		"toolchainPath": "${userHome}/zephyr-sdk-0.16.9-rc2/xtensa-espressif_esp32_zephyr-elf/bin",
+		"toolchainPath": "${userHome}/zephyr-sdk-${config:bsp.zephyr_sdk_version}/xtensa-espressif_esp32_zephyr-elf/bin",
 		"toolchainPrefix": "xtensa-espressif_esp32_zephyr-elf",
 		"openOCDPreConfigLaunchCommands":[
-			"set ESP_FLASH_SIZE 0",
-			"set ESP32_ONLYCPU 1",
-			"set ESP_RTOS none"
+			"set ESP_RTOS Zephyr",
+		],
+		"openOCDLaunchCommands": [
+			"init",
+			"reset halt",
+			"esp appimage_offset 0x0"
 		],
 		"configFiles": [
-			"${config:bsp.openocd_root}/share/openocd/scripts/board/esp32_devkitj_v1.cfg"
+			"board/esp32_devkitj_v1.cfg"
 		],
 		"overrideAttachCommands": [
-			"set remote hardware-watchpoint-limit 2",
-			"mon halt",
+			"mon reset halt",
 			"maintenance flush register-cache"
 		],
 		"overrideRestartCommands": [
 			"mon reset halt",
 			"maintenance flush register-cache",
 		],
-		"runToEntryPoint": "main"
+		"runToEntryPoint": "main",
 	},
 	{
 		"name": "ESP-WROVER-KIT",
@@ -42,26 +44,28 @@
 		"interface": "jtag",
 		"svdFile": "${config:bsp.svd_path}/esp32.svd",
 		"serverpath": "${config:bsp.openocd_root}/bin/openocd",
-		"toolchainPath": "${userHome}/zephyr-sdk-0.16.9-rc2/xtensa-espressif_esp32_zephyr-elf/bin",
+		"toolchainPath": "${userHome}/zephyr-sdk-${config:bsp.zephyr_sdk_version}/xtensa-espressif_esp32_zephyr-elf/bin",
 		"toolchainPrefix": "xtensa-espressif_esp32_zephyr-elf",
 		"openOCDPreConfigLaunchCommands":[
-			"set ESP_FLASH_SIZE 0",
-			"set ESP32_ONLYCPU 1",
-			"set ESP_RTOS none"
+			"set ESP_RTOS Zephyr",
+		],
+		"openOCDLaunchCommands": [
+			"init",
+			"reset halt",
+			"esp appimage_offset 0x0"
 		],
 		"configFiles": [
-			"${config:bsp.openocd_root}/share/openocd/scripts/board/esp32-wrover-kit-3.3v.cfg"
+			"board/esp32-wrover-kit-3.3v.cfg"
 		],
 		"overrideAttachCommands": [
-			"set remote hardware-watchpoint-limit 2",
-			"mon halt",
+			"mon reset halt",
 			"maintenance flush register-cache"
 		],
 		"overrideRestartCommands": [
 			"mon reset halt",
 			"maintenance flush register-cache",
 		],
-		"runToEntryPoint": "main"
+		"runToEntryPoint": "main",
 	},
 	{
 		"name": "ESP32S2",
@@ -73,18 +77,21 @@
 		"interface": "jtag",
 		"svdFile": "${config:bsp.svd_path}/esp32s2.svd",
 		"serverpath": "${config:bsp.openocd_root}/bin/openocd",
-		"toolchainPath": "${userHome}/zephyr-sdk-0.16.9-rc2/xtensa-espressif_esp32s2_zephyr-elf/bin",
+		"toolchainPath": "${userHome}/zephyr-sdk-${config:bsp.zephyr_sdk_version}/xtensa-espressif_esp32s2_zephyr-elf/bin",
 		"toolchainPrefix": "xtensa-espressif_esp32s2_zephyr-elf",
 		"openOCDPreConfigLaunchCommands":[
-			"set ESP_FLASH_SIZE 0",
-			"set ESP_RTOS none"
+			"set ESP_RTOS Zephyr",
+		],
+		"openOCDLaunchCommands": [
+			"init",
+			"reset halt",
+			"esp appimage_offset 0x0"
 		],
 		"configFiles": [
-			"${config:bsp.openocd_root}/share/openocd/scripts/board/esp32s2-kaluga-1.cfg"
+			"board/esp32s2-kaluga-1.cfg"
 		],
 		"overrideAttachCommands": [
-			"set remote hardware-watchpoint-limit 2",
-			"mon halt",
+			"mon reset halt",
 			"maintenance flush register-cache"
 		],
 		"overrideRestartCommands": [
@@ -103,17 +110,21 @@
 		"interface": "jtag",
 		"svdFile": "${config:bsp.svd_path}/esp32c2.svd",
 		"serverpath": "${config:bsp.openocd_root}/bin/openocd",
-		"toolchainPath": "${userHome}/zephyr-sdk-0.16.9-rc2/riscv64-zephyr-elf/bin/",
+		"toolchainPath": "${userHome}/zephyr-sdk-${config:bsp.zephyr_sdk_version}/riscv64-zephyr-elf/bin/",
 		"toolchainPrefix": "riscv64-zephyr-elf",
 		"openOCDPreConfigLaunchCommands":[
-			"set ESP_RTOS none"
+			"set ESP_RTOS Zephyr",
+		],
+		"openOCDLaunchCommands": [
+			"init",
+			"reset halt",
+			"esp appimage_offset 0x0"
 		],
 		"configFiles": [
-			"${config:bsp.openocd_root}/share/openocd/scripts/board/esp32c2-ftdi.cfg"
+			"board/esp32c2-bridge.cfg"
 		],
 		"overrideAttachCommands": [
-			"set remote hardware-watchpoint-limit 2",
-			"mon halt",
+			"mon reset halt",
 			"maintenance flush register-cache"
 		],
 		"overrideRestartCommands": [
@@ -132,19 +143,21 @@
 		"interface": "jtag",
 		"svdFile": "${config:bsp.svd_path}/esp32c3.svd",
 		"serverpath": "${config:bsp.openocd_root}/bin/openocd",
-		"toolchainPath": "${userHome}/zephyr-sdk-0.16.9-rc2/riscv64-zephyr-elf/bin/",
+		"toolchainPath": "${userHome}/zephyr-sdk-${config:bsp.zephyr_sdk_version}/riscv64-zephyr-elf/bin/",
 		"toolchainPrefix": "riscv64-zephyr-elf",
 		"openOCDPreConfigLaunchCommands":[
-			"set ESP_FLASH_SIZE 0",
-			"set ESP_RTOS none"
+			"set ESP_RTOS Zephyr",
+		],
+		"openOCDLaunchCommands": [
+			"init",
+			"reset halt",
+			"esp appimage_offset 0x0"
 		],
 		"configFiles": [
-			"${config:bsp.openocd_root}/share/openocd/scripts/board/esp32c3-builtin.cfg"
-
+			"board/esp32c3-builtin.cfg"
 		],
 		"overrideAttachCommands": [
-			"set remote hardware-watchpoint-limit 2",
-			"mon halt",
+			"mon reset halt",
 			"maintenance flush register-cache"
 		],
 		"overrideRestartCommands": [
@@ -163,18 +176,20 @@
 		"interface": "jtag",
 		"svdFile": "${config:bsp.svd_path}/esp32c6.svd",
 		"serverpath": "${config:bsp.openocd_root}/bin/openocd",
-		"toolchainPath": "${userHome}/zephyr-sdk-0.16.9-rc2/riscv64-zephyr-elf/bin/",
+		"toolchainPath": "${userHome}/zephyr-sdk-${config:bsp.zephyr_sdk_version}/riscv64-zephyr-elf/bin/",
 		"toolchainPrefix": "riscv64-zephyr-elf",
 		"openOCDPreConfigLaunchCommands":[
-			"set ESP_FLASH_SIZE 0",
-			"set ESP_RTOS none",
+			"set ESP_RTOS Zephyr",
+		],
+		"openOCDLaunchCommands": [
+			"init",
+			"reset halt",
+			"esp appimage_offset 0x0"
 		],
 		"configFiles": [
-			"${config:bsp.openocd_root}/share/openocd/scripts/board/esp32c6-builtin.cfg"
-
+			"board/esp32c6-builtin.cfg",
 		],
 		"overrideAttachCommands": [
-			"set remote hardware-watchpoint-limit 2",
 			"mon reset halt",
 			"maintenance flush register-cache"
 		],
@@ -185,7 +200,7 @@
 		"runToEntryPoint": "main",
 	},
 	{
-		"name": "ESP32S3-DEVKITC",
+		"name": "ESP32S3",
 		"cwd": "${workspaceRoot}",
 		"executable": "${workspaceFolder:zephyr}/build/zephyr/zephyr.elf",
 		"request": "attach",
@@ -194,20 +209,21 @@
 		"interface": "jtag",
 		"svdFile": "${config:bsp.svd_path}/esp32s3.svd",
 		"serverpath": "${config:bsp.openocd_root}/bin/openocd",
-		"toolchainPath": "${userHome}/zephyr-sdk-0.16.9-rc2/xtensa-espressif_esp32s3_zephyr-elf/bin/",
+		"toolchainPath": "${userHome}/zephyr-sdk-${config:bsp.zephyr_sdk_version}/xtensa-espressif_esp32s3_zephyr-elf/bin/",
 		"toolchainPrefix": "xtensa-espressif_esp32s3_zephyr-elf",
 		"openOCDPreConfigLaunchCommands":[
-			"set ESP_FLASH_SIZE 0",
-			"set ESP32_ONLYCPU 1",
-			"set ESP_RTOS none",
+			"set ESP_RTOS Zephyr",
+		],
+		"openOCDLaunchCommands": [
+			"init",
+			"reset halt",
+			"esp appimage_offset 0x0"
 		],
 		"configFiles": [
-			"${config:bsp.openocd_root}/share/openocd/scripts/board/esp32s3-builtin.cfg"
-
+			"board/esp32s3-builtin.cfg"
 		],
 		"overrideAttachCommands": [
-			"set remote hardware-watchpoint-limit 2",
-			"mon halt",
+			"mon reset halt",
 			"maintenance flush register-cache",
 		],
 		"overrideRestartCommands": [

@@ -23,8 +23,10 @@
 			"board_root": "",
 			"board_path": "",
 			"svd_path": "${workspaceFolder}/esp_svd",
-			"openocd_root": "${userHome}/openOCD/openocd-esp32",
-			"debug_config": ""
+			"rom_elf_path": "${workspaceFolder}/rom_elf",
+			"openocd_root": "/usr/local",
+			"debug_config": "",
+			"zephyr_sdk_version": "0.17.0",
 		},
 
 		"C_Cpp.default.compileCommands": "${workspaceFolder:zephyr}/build/compile_commands.json",
@@ -37,7 +39,7 @@
 
 		// The number of spaces a tab is equal to. This setting is overridden
 		// based on the file contents when `editor.detectIndentation` is true.
-		"editor.tabSize": 4,
+		"editor.tabSize": 8,
 
 		// Insert spaces when pressing Tab. This setting is overriden
 		// based on the file contents when `editor.detectIndentation` is true.
